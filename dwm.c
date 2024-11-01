@@ -1221,9 +1221,9 @@ geticonprop(Window win, unsigned int *picw, unsigned int *pich)
 	unsigned long n, extra, *p = NULL;
 	Atom real;
 
-	if (XGetWindowProperty(dpy, win, netatom[NetWMIcon], 0L, LONG_MAX, False, AnyPropertyType, 
+	if (XGetWindowProperty(dpy, win, netatom[NetWMIcon], 0L, LONG_MAX, False, AnyPropertyType,
 						   &real, &format, &n, &extra, (unsigned char **)&p) != Success)
-		return None; 
+		return None;
 	if (n == 0 || format != 32) { XFree(p); return None; }
 
 	unsigned long *bstp = NULL;
@@ -1605,7 +1605,7 @@ monocle(Monitor *m)
 {
 	int w, h, x, y;
 	Client *c;
-	
+
 	for (c = nexttiled(m->clients); c; c = nexttiled(c->next)) {
 		x = m->wx;
 		y = m->wy;
@@ -3271,7 +3271,7 @@ void
 updatestatus(void)
 {
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) {
-		strcpy(stext, "dwm-titus:"VERSION);
+		strcpy(stext, "virtual-dwm:"VERSION);
 		statusw = TEXTW(stext) - lrpad + 2;
 	} else {
 		char *text, *s, ch;

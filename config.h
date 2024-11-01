@@ -57,6 +57,7 @@ static const Rule rules[] = {
     { "St",                 NULL,     NULL,           0,         0,          1,          0,         0 },
     { "kitty",              NULL,     NULL,           0,         0,          1,          0,         0 },
     { "Alacritty",          NULL,     NULL,           0,         0,          1,          0,         0 },
+    { "Wezterm",            NULL,     NULL,           0,         0,          1,          0,         0 },
     { "terminator",         NULL,     NULL,           0,         0,          1,          0,         0 },
     { "lutris",             NULL,     NULL,           0,         1,          0,          0,         0 },
     { "steam_app_default",  NULL,     NULL,           0,         1,          0,          0,         0 },
@@ -90,7 +91,7 @@ static const Layout layouts[] = {
 #define STATUSBAR "dwmblocks"
 /* commands */
 static const char *launchercmd[] = { "rofi", "-show", "drun", NULL };
-static const char *termcmd[]     = { "alacritty", NULL };
+static const char *termcmd[]     = { "wezterm", NULL };
 
 static Key keys[] = {
     /* modifier                     key                        function        argument */
@@ -117,7 +118,7 @@ static Key keys[] = {
     { MODKEY,                       XK_i,                      incnmaster,     {.i = +1 } },
     { MODKEY,                       XK_d,                      incnmaster,     {.i = -1 } },
     { MODKEY,                       XK_h,                      setmfact,       {.f = -0.05} },
-    { MODKEY,                       XK_l,                      setmfact,       {.f = +0.05} },
+    { MODKEY,                       XK_semicolon,              setmfact,       {.f = +0.05} },
     { MODKEY|ShiftMask,             XK_h,                      setcfact,       {.f = +0.25} },
     { MODKEY|ShiftMask,             XK_l,                      setcfact,       {.f = -0.25} },
     { MODKEY|ShiftMask,             XK_o,                      setcfact,       {.f =  0.00} },
